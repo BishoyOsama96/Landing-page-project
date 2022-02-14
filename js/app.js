@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", navBarMenu, false);
 document.addEventListener("DOMContentLoaded", currentSection, false);
 document.addEventListener("DOMContentLoaded", scrollToSection, false);
+document.addEventListener("DOMContentLoaded", menuBar, false);
+document.addEventListener("DOMContentLoaded", scrollToTop, false);
 
 // sellct all sections
 const navSections = document.querySelectorAll("section");
@@ -40,7 +42,7 @@ function currentSection() {
       // access the title
       const sectionTitle = navSection.dataset.nav;
       const sectionTop = navSection.getBoundingClientRect().top;
-      // finds which section in the to of the view
+      // finds which section in the top of the view
       if (sectionTop >= 0 && sectionTop <= 300) {
         navSection.classList.add("your-active-class");
         for (const link of links) {
@@ -69,14 +71,30 @@ function scrollToSection(){
   });
 }
 
-/**
- * End Main Functions
- * Begin Events
- *
- */
 
-// Build menu
+// Build menu for small screens
+function menuBar(){
+  const menuBtn=document.querySelector(".menu__btn");
+  menuBtn.addEventListener("click",function(){
+    const menuLinks=document.querySelectorAll(".menu__link");
+    for (const menulink of menuLinks) {
+      if (menulink.style.display === 'none'){
+        menulink.style.display = 'block';
+    } else {
+        menulink.style.display = 'none';
+    }
+}
+  });
+}
 
-// Scroll to section on link click
-
-// Set sections as active
+// Scroll to top on reaching footer
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const rootElement = document.documentElement;
+scrollToTopBtn.addEventListener("click", scrollToTop)
+function scrollToTop (){
+  // scroll to top logic
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}

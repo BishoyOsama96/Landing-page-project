@@ -73,6 +73,7 @@ section {
 
 .navbar__menu .menu__link:hover {
     background: #333;
+    cursor: pointer;
     color: rgb(151, 151, 151);
     transition: ease 0.3s all;
 }
@@ -88,6 +89,10 @@ section {
 
 /* Footer Styles */
 .page__footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
     background: #000;
     padding: 3em;
     color: #fff;
@@ -116,6 +121,29 @@ section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
+}
+
+@media screen and (max-width: 700px) {
+    .menu__btn{
+        display: block;
+        position: relative;
+        top: 0;
+        float: right;      
+    }
+    div.menu__bar{
+        width: 30px;
+        height: 3px;
+        background-color: rgb(255, 255, 255);
+        margin: 5px 0;
+    }
+    .navbar__menu li {
+        display: block;
+    }
+    .navbar__menu ul {
+        padding-left: 0;
+        margin: 0;
+        text-align: left;
+    }
 }
 
 /* Background Circles */
@@ -184,7 +212,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(209, 206, 206, 0.1) 0%, rgba(177, 174, 174, 0) 100%);
 }
 
 section.your-active-class .landing__container::before {
@@ -198,7 +226,8 @@ section.your-active-class .landing__container::after {
 }
 
 a.menu__link.your-active-class{
-background-color:rgb(30, 30, 30);
+background-color:rgb(179, 172, 172);
+color: #333;
 }
 
 /* Section Active Styles Keyframe Animations */
@@ -214,3 +243,15 @@ background-color:rgb(30, 30, 30);
 		           rotate(-360deg);
 	}
 }
+
+/* scroll to the top button */
+#scrollToTopBtn {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 55px;
+    width: 55px;
+  }
