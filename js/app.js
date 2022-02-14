@@ -12,11 +12,11 @@ function navBarMenu() {
   //loop through sections
   for (const navSection of navSections) {
     //create list to contain the sections
-    const listItem = document.createElement("il");
+    const listItem = document.createElement("li");
     //create every section anchor
     const navAnchor = document.createElement("a");
     navAnchor.textContent = navSection.dataset.nav;
-    navAnchor.classList.add("meun_link");
+    navAnchor.classList.add("menu__link");
     //append the anchor to it`s section
     listItem.appendChild(navAnchor);
     //adding the list to the DOM fragment

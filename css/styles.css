@@ -1,7 +1,7 @@
 /* ---- Base Rules ---- */
 body {
-    background: rgb(102, 160, 88);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: rgb(69, 70, 69);
+    background: linear-gradient(0deg, rgb(81, 83, 82) 0%, rgb(32, 32, 32) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -22,12 +22,12 @@ h1 {
     }
 }
 
-h2 {
-    border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
-    font-size: 3em;
-    color: #fff;
-}
+    h2 {
+        border-bottom: 1px solid rgb(15, 15, 15);
+        font-family: 'Oxygen', Sans-Serif;
+        font-size: 3em;
+        color: #fff;
+    }    
 
 p {
     line-height: 1.6em;
@@ -68,7 +68,7 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: rgb(248, 248, 248);
 }
 
 .navbar__menu .menu__link:hover {
@@ -79,7 +79,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: rgb(43, 42, 42);
+    background: rgb(30, 30, 30);
     position: fixed;
     top: 0;
     width: 100%;
@@ -195,6 +195,10 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+a.menu__link.your-active-class{
+background-color:rgb(30, 30, 30);
 }
 
 /* Section Active Styles Keyframe Animations */
