@@ -1,6 +1,7 @@
 //EventListeners list
 document.addEventListener("DOMContentLoaded", navBarMenu, false);
 document.addEventListener("DOMContentLoaded", currentSection, false);
+document.addEventListener("DOMContentLoaded", scrollToSection, false);
 
 // sellct all sections
 const navSections = document.querySelectorAll("section");
@@ -57,6 +58,16 @@ function currentSection() {
 }
 
 // Scroll to anchor ID using scrollTO event
+function scrollToSection(){
+  navBarList.addEventListener("click",function(eventListener){
+    eventListener.preventDefault();
+    const currentSection = document.querySelector(`[data-nav="${eventListener.target.textContent}"]`);
+    currentSection.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+  })
+  });
+}
 
 /**
  * End Main Functions
